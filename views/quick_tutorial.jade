@@ -1,0 +1,107 @@
+doctype html
+html
+    head
+        title NodeJS - for work!
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        // Bootstrap CSS
+        link(href='stylesheets/bootstrap.css', rel='stylesheet', media='screen')
+        link(href='mysite.css', rel='stylesheet', media='screen')
+        script(type='text/javascript', src='javascripts/jquery.js')
+        script(type='text/javascript', src='stylesheets/bootstrap.min.js')
+    body
+        // Navigation Bar
+        .navbar.navbar-default
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='#')
+                    | NodeJS - for work! - sharing the experience & awesomeness that come across while working on NodeJS
+
+            .navbar-collapse.collapse.navbar-responsive-collapse
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href='home') Home
+                    li
+                        a(href='about') About
+                    li.active
+                        a(href='#') Quick Tutorial
+                    li
+                        a(href='contact') Contact
+        // Navigation Bar
+        .panel.panel-default
+            .panel-body
+                legend Quick Tutorial - get your hands dirty with NodeJS
+
+        .panel.panel-default
+            .panel-body
+                .row
+                    .col-xs-6
+                        big
+                            | Learn how to install NodeJS on Ubuntu.
+                        blockquote
+                            a(href='install_node') NodeJS Installation - Ubuntu
+                    .col-xs-6
+                        big
+                            | Learn how to integrate NewRelic with a NodeJS application.
+                        blockquote
+                            a(href='node_newrelic') Integrate NewRelic
+                    .col-xs-6
+                        big
+                            | Learn how to render a simple HTML page using jade template.
+                        blockquote
+                            a(href='simple_web') Simple web page
+                    .col-xs-6
+                        big
+                            | Learn how to iterate over a loop synchronously using async library
+                        blockquote
+                            a(href='sync_loop') Iterate synchronously
+                    .col-xs-6
+                        big
+                            | Learn how to execute multiple tasks in parallel using async library
+                        blockquote
+                            a(href='parallel_task') Execute tasks in parallel
+                    .col-xs-6
+                        big
+                            | Learn how to a call a GET HTTP service using request module.
+                        blockquote
+                            a(href='get_http') GET HTTP Call
+                    .col-xs-6
+                        big
+                            | Learn how to a call a POST HTTP service using request module.
+                        blockquote
+                            a(href='post_http') POST HTTP Call
+                    .col-xs-6
+                        big
+                            | Learn how to execute a timer task.
+                        blockquote
+                            a(href='timer_task') Execute a timer task
+                    .col-xs-6
+                        big
+                            | Learn how to schedule an execution of a task periodically.
+                        blockquote
+                            a(href='schedule_task') Schedule execution of a task
+                    .col-xs-6
+                        big
+                            | Learn how to set up a cron.
+                        blockquote
+                            a(href='cron_setup') Set up a cron
+                    .col-xs-6
+                        big
+                            | Learn how to upload files to AWS S3.
+                        blockquote
+                            a(href='upload_files') Upload files to AWS S3
+                    .col-xs-6
+                        big
+                            | Learn how to send push notifications to iOS app.
+                        blockquote
+                            a(href='notify_ios') Send push notification to iOS app
+                    .col-xs-6
+                        big
+                            | Learn how to send push notifications to Android app.
+                        blockquote
+                            a(href='notify_android') Send push notification to Android app
+
+
+

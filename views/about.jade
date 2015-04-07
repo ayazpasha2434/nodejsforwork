@@ -1,0 +1,95 @@
+doctype html
+html
+    head
+        title NodeJS - for work!
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        //
+           Bootstrap CSS
+        link(href='stylesheets/bootstrap.css', rel='stylesheet', media='screen')
+        link(href='mysite.css', rel='stylesheet', media='screen')
+        script(type='text/javascript', src='javascripts/jquery.js')
+        script(type='text/javascript', src='stylesheets/bootstrap.min.js')
+    body
+        // Navigation Bar
+        .navbar.navbar-default
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='#')
+                    | NodeJS - for work! - sharing the experience & awesomeness that come across while working on NodeJS
+
+            .navbar-collapse.collapse.navbar-responsive-collapse
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href='home') Home
+                    li.active
+                        a(href='#') About
+                    li
+                        a(href='quick_tutorial') Quick Tutorial
+                    li
+                        a(href='contact') Contact
+
+        .panel.panel-default
+            .panel-body
+                legend About us - Who are we? Join us. Stay Connected.
+
+        .row
+            .col-xs-6
+                .panel.panel-default
+                    .panel-heading
+                        h4  Who are we?
+                    .panel-body
+                        | We are bunch of experienced developers working on extensive tech stack starting from JAVA/J2EE, NodeJS, Spring, MySQL, Hibernate, iBatis, Liferay, MongoDB, Redis, RabbitMQ. We like to share our knowledge gained while working on different technologies. We look forward to developers like you to join us & contribute your understanding & experience with a wider range fellow developers.
+            .col-xs-6
+                .panel.panel-default
+                    .panel-heading
+                        h4  Join us.
+                    .panel-body
+                        | We like to share our knowledge gained while working on different technologies. We look forward to developers like you to join us & contribute your understanding & experience with a wider range fellow developers. You come across lot of challenges & difficulties while working on a project & you leave no stone unturned to fix the same. How would you feel if the same solution is helping other fellow developers & make their life easy, Great!, isn'it it?
+            .col-xs-6
+                .panel.panel-default
+                    .panel-heading
+                        h4  Always Connected.
+                    .panel-body
+                        | With a built in chat system, you'd be able to ask questions / clarify doubts with fellow developers. Afterall learing is a continous process & whle making others learn you are just getting better. We like to share our knowledge gained while working on different technologies. We look forward to developers like you to join us & contribute your understanding & experience with a wider range fellow developers.
+
+        .hidden
+            .col-lg-8
+                form.form-horizontal
+                    fieldset
+                        legend Pay Here
+                        .form-group
+                            label.col-lg-2.control-label(for='inputEmail') Email
+                            .col-lg-10
+                                input#inputEmail.form-control(type='text', placeholder='Email')
+                        .form-group
+                            label.col-lg-2.control-label(for='inputPassword') Password
+                            .col-lg-10
+                                input#inputPassword.form-control(type='password', placeholder='Password')
+                                .checkbox
+                                    label
+                                        input(type='checkbox')
+                                        | Checkbox
+                        .form-group
+                            label.col-lg-2.control-label(for='textArea') Comments
+                            .col-lg-10
+                                textarea#textArea.form-control(rows='3')
+                                span.help-block
+                                    | A longer block of help text that breaks onto a new line and may extend beyond one line.
+                        .form-group
+                            label.col-lg-2.control-label Pay options
+                            .col-lg-10
+                                .radio
+                                    label
+                                        input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
+                                        | Debit Card
+                                .radio
+                                    label
+                                        input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
+                                        | Credit Card
+                        .form-group
+                            .col-lg-10.col-lg-offset-2
+                                button.btn.btn-default Cancel
+                                button.btn.btn-primary(type='submit') Submit

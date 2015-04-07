@@ -1,0 +1,64 @@
+doctype html
+html
+    head
+        title NodeJS - for work!
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        //
+           Bootstrap CSS
+        link(href='/stylesheets/bootstrap.css', rel='stylesheet', media='screen')
+        script(type='text/javascript', src='/javascripts/jquery.js')
+        script(type='text/javascript', src='/javascripts/bootstrap.min.js')
+    body
+        //
+           Navigation Bar
+        .bodykinda
+            .navbar.navbar-default
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#')
+                        | NodeJS - for work! - sharing the experience & awesomeness that come across while working on NodeJS
+
+                .navbar-collapse.collapse.navbar-responsive-collapse
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href='home') Home
+                        li
+                            a(href='about') About
+                        li
+                            a(href='quick_tutorial') Quick Tutorial
+                        li.active
+                            a(href='#') Contact
+            // Navigation Bar
+        .jumbotron
+            h1 NodeJS - for work!
+            p
+                | Do you wanna get connected to developers working on projects built on NodeJS ..?, meaning share real time experience working on NodeJS...?, and wondering if this is ever possible. Well you are not alone, you are on the right spot.
+            p
+
+
+        .panel.panel-default
+            .panel-body
+                .row
+                    .col-xs-6
+                        .h5 Are you interested in one of the below
+                        ul
+                            li Want to learn developing applications on NodeJS?
+                            li Issues / Doubts related to NodeJS
+                            li Startup enthusiast? Want to build an application in no time?
+                            li Need a helping hand in your current project?
+
+                    .col-xs-6
+                        .h5
+                            | Contact us
+                        .address
+                            .strong
+                                | Ayaz Pasha
+                            | Lakkasandra, Bangalore
+                            .br
+                            | P: (+91) 8892837295
+                            .br
+                            a(href='mailto:#')
+                                |ayazpasha2434@gmail.com

@@ -1,0 +1,141 @@
+doctype html
+html
+    head
+        title NodeJS - for work!
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        //
+           Bootstrap CSS
+        link(href='stylesheets/bootstrap.css', rel='stylesheet', media='screen')
+        link(href='mysite.css', rel='stylesheet', media='screen')
+        script(type='text/javascript', src='javascripts/jquery.js')
+        script(type='text/javascript', src='stylesheets/bootstrap.min.js')
+    body
+        // Navigation Bar
+        .navbar.navbar-default
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='#')
+                    | NodeJS - for work! - sharing the experience & awesomeness that come across while working on NodeJS
+
+            .navbar-collapse.collapse.navbar-responsive-collapse
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href='home') Home
+                    li
+                        a(href='about') About
+                    li.active
+                        a(href='quick_tutorial') Quick Tutorial
+                    li
+                        a(href='contact') Contact
+        // Navigation Bar
+        .panel.panel-default
+            .panel-body
+                legend Install NodeJS on Ubuntu
+
+        .panel.panel-default
+            .panel-body
+                div
+                    | 1. Install the pre-requisite libraries required to compile NodeJS source code.
+                    br
+                    code
+                        | sudo apt-get install g++ curl libssl-dev apache2-utils
+                br
+                div
+                    | 2. Install git, to checkout NodeJS source code.
+                    br
+                    code
+                        | sudo apt-get install git
+                br
+                div
+                    | 3. Clone the NodeJS code locally.
+                    br
+                    code
+                        | git clone git://github.com/ry/node.git
+                br
+                div
+                    | 4. Navigate to folder where source is checked out.
+                    br
+                    code
+                        | cd node
+                br
+                div
+                    | 5. Run the following command.
+                    br
+                    code
+                        | ./configure
+                br
+                div
+                    | 6. Run the following command.
+                    br
+                    code
+                        | make
+                br
+                div
+                    | 7. Run the following command.
+                    br
+                    code
+                        | sudo make install
+                br
+                br
+                div
+                    | Next, run the following command in your terminal & you should see the version of NodeJS installed.
+                    br
+                    code
+                        | node -v
+
+        .panel.panel-default
+            .panel-body
+                div
+                    big (inorder to install the stable version of NodeJS)
+                br
+                code
+                    | sudo npm install -g n
+                br
+                code
+                    | sudo n stable
+                br
+                br
+                div (see also
+                    a(href='https://github.com/joyent/node/wiki/Installation')  NodeJS Wiki
+                    | )
+        .hidden
+            .col-lg-8
+                form.form-horizontal
+                    fieldset
+                        legend Pay Here
+                        .form-group
+                            label.col-lg-2.control-label(for='inputEmail') Email
+                            .col-lg-10
+                                input#inputEmail.form-control(type='text', placeholder='Email')
+                        .form-group
+                            label.col-lg-2.control-label(for='inputPassword') Password
+                            .col-lg-10
+                                input#inputPassword.form-control(type='password', placeholder='Password')
+                                .checkbox
+                                    label
+                                        input(type='checkbox')
+                                        | Checkbox
+                        .form-group
+                            label.col-lg-2.control-label(for='textArea') Comments
+                            .col-lg-10
+                                textarea#textArea.form-control(rows='3')
+                                span.help-block
+                                    | A longer block of help text that breaks onto a new line and may extend beyond one line.
+                        .form-group
+                            label.col-lg-2.control-label Pay options
+                            .col-lg-10
+                                .radio
+                                    label
+                                        input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
+                                        | Debit Card
+                                .radio
+                                    label
+                                        input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
+                                        | Credit Card
+                        .form-group
+                            .col-lg-10.col-lg-offset-2
+                                button.btn.btn-default Cancel
+                                button.btn.btn-primary(type='submit') Submit
