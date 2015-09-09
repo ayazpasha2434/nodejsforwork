@@ -12,6 +12,8 @@
     "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
     "debug": "~0.7.4",
-    "jade": "*"
+    "jade": "*",
+    "async":"0.2.9",
+    "mongodb": "*"
   }
 }
