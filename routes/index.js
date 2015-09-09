@@ -67,4 +67,10 @@ exports.notify_android = function(req, res){
     res.render('notify_android');
 }
 
+exports.graceful_restart = function(req, res){
+    res.render('graceful_restart');
+}
 
+exports.encrypt = function(req, res){
+    res.render('encrypt');
+}

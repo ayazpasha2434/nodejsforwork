@@ -41,6 +41,8 @@ app.get('/simple_web', routes.simple_web);
 app.get('/get_http', routes.get_http);
 app.get('/post_http', routes.post_http);
 app.get('/cron_setup', routes.cron_setup);
+app.get('/graceful_restart', routes.graceful_restart);
+app.get('/encrypt', routes.encrypt);
 
 
 /// catch 404 and forwarding to error handler
