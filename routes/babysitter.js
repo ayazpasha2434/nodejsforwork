@@ -3,7 +3,7 @@
  */
 
 var MongoClient = require('mongodb').MongoClient,
-    db = MongoClient.connect('mongodb://127.0.0.1:27018/babysitter', function(err, dbc) {
+    db = MongoClient.connect('mongodb://127.0.0.1:27017/babysitter', function(err, dbc) {
         if(err) throw err;
         db = dbc;
     });
@@ -30,7 +30,7 @@ exports.nearest_baby_sitters = function(req, res){
 
     var query = {};
 
-    var projection  = { "latitude": 1, "longitude": 1, "phone": 1, "address": 1, "name": 1, "year_of_est": 1 };
+    var projection  = { "latitude": 1, "longitude": 1, "phone": 1, "address": 1, "name": 1, "year_of_est": 1, "categories": 1 };
 
     db.collection('babysitters').find(query, projection).toArray(function(err, babySitters) {
         if(err) throw err;
@@ -42,14 +42,19 @@ exports.nearest_baby_sitters = function(req, res){
             var distance = get_radial_distance(lat, lon, lat1, long1);
 
             if (distance <= distance_limit) {
+
+                var year_of_est = babySitterObj.year_of_est + "";
+
                 result.push({
                     "name": babySitterObj.name,
                     "distance": distance,
-                    "year_of_est": babySitterObj.year_of_est,
+                    "year_of_est": year_of_est,
                     "address": babySitterObj.address,
                     "phone": babySitterObj.phone,
                     "latitude" : lat1,
-                    "longitude" : long1
+                    "longitude" : long1,
+                    "category": babySitterObj.categories,
+                    "id": babySitterObj._id
                 });
             }
 
