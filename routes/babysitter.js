@@ -30,20 +30,20 @@ exports.nearest_baby_sitters = function(req, res){
 
     var query = {};
 
-    var projection  = { "latitude": 1, "longitude": 1, "phone": 1, "address": 1, "name": 1, "year_of_est": 1, "categories": 1 };
+    var projection  = { "complat": 1, "complong": 1, "phone": 1, "address": 1, "name": 1, "YOE": 1, "Reviews": 1, "HoursOfOperation": 1, "totalReviews": 1, "Catalogue": 1, "overallRatingsChart": 1, "rating": 1 };
 
     db.collection('babysitters').find(query, projection).toArray(function(err, babySitters) {
         if(err) throw err;
 
         require("async").forEach(babySitters, function (babySitterObj, callback) {
-            var lat1 = parseFloat(babySitterObj["latitude"]);
-            var long1 = parseFloat(babySitterObj["longitude"]);
+            var lat1 = parseFloat(babySitterObj["complat"]);
+            var long1 = parseFloat(babySitterObj["complong"]);
 
             var distance = get_radial_distance(lat, lon, lat1, long1);
 
             if (distance <= distance_limit) {
 
-                var year_of_est = babySitterObj.year_of_est + "";
+                var year_of_est = babySitterObj.YOE + "";
 
                 result.push({
                     "name": babySitterObj.name,
@@ -54,7 +54,13 @@ exports.nearest_baby_sitters = function(req, res){
                     "latitude" : lat1,
                     "longitude" : long1,
                     "category": babySitterObj.categories,
-                    "id": babySitterObj._id
+                    "id": babySitterObj._id,
+                    "reviews": babySitterObj.Reviews,
+                    "hoursOfOperation": babySitterObj.HoursOfOperation,
+                    "totalReviews": babySitterObj.totalReviews,
+                    "catalogue": babySitterObj.Catalogue,
+                    "overallRatingsChart": babySitterObj.overallRatingsChart,
+                    "rating": babySitterObj.rating
                 });
             }
 
