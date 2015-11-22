@@ -481,8 +481,8 @@ exports.import_data = function(req, res){
 
         require('async').forEach([1,2,3,4,5,6,7,8,9,10], function(item, callb) {
 
-            request('http://t.justdial.com/india_api_read/26june2015/searchziva.php?city='+ city +'&state=&case=spcall&stype=category_list&search=cooks&docid=1000717763&lat=&long=&area=&max=20&rnd1=0.91168&rnd2=0.90195&rnd3=0.80184&basedon=&nearme=&wap=2&login_mobile=&moviedate=2015-11-22&mvbksrc=tp%2Cpvr%2Ccinemax%2Cf&pg_no='+item, function(err, response, body) {
-
+            request('http://t.justdial.com/india_api_read/26june2015/searchziva.php?city='+ city +'&state=&case=spcall&stype=category_list&search=home%20nursing%20&docid=169223&lat=&long=&area=&max=20&rnd1=0.52607&rnd2=0.54743&rnd3=0.93711&basedon=&nearme=&wap=2&login_mobile=&moviedate=2015-11-22&mvbksrc=tp%2Cpvr%2Ccinemax%2Cf&pg_no='+item, function(err, response, body) {
+                //request('http://t.justdial.com/india_api_read/26june2015/searchziva.php?city='+ city +'&state=&case=spcall&stype=category_list&search=cooks&docid=1000717763&lat=&long=&area=&max=20&rnd1=0.91168&rnd2=0.90195&rnd3=0.80184&basedon=&nearme=&wap=2&login_mobile=&moviedate=2015-11-22&mvbksrc=tp%2Cpvr%2Ccinemax%2Cf&pg_no='+item, function(err, response, body) {
                 //request('http://t.justdial.com/india_api_read/26june2015/searchziva.php?city='+ city +'&state=&case=spcall&stype=category_list&search=home%20nursing%20&docid=169223&lat=&long=&area=&max=20&rnd1=0.52607&rnd2=0.54743&rnd3=0.93711&basedon=&nearme=&wap=2&login_mobile=&moviedate=2015-11-22&mvbksrc=tp%2Cpvr%2Ccinemax%2Cf&pg_no='+item, function(err, response, body) {
                 //request('http://t.justdial.com/india_api_read/26june2015/searchziva.php?city='+ city +'&state=&case=spcall&stype=category_list&search=Day%20Care%20Centres&docid=1000687732&rnd1=0.92378&rnd2=0.00741&rnd3=0.48715&basedon=&nearme=&wap=2&login_mobile=&moviedate=2015-10-23&mvbksrc=tp%2Cpvr%2Ccinemax%2Cfc&max=50&pg_no='+item, function(err, response, body) {
 
@@ -631,7 +631,7 @@ function add_to_mongo(docId, city, thumbnail, params, callback) {
 
         if(db != undefined) {
 
-            db.collection('cooks').find({_id: docId}).toArray(function(err, sitters) {
+            db.collection('nurses').find({_id: docId}).toArray(function(err, sitters) {
 
                 if(!err) {
 
@@ -658,7 +658,7 @@ function add_to_mongo(docId, city, thumbnail, params, callback) {
 
                     //console.log("elderly_care/insertOrUpdate "+JSON.stringify(query)+" "+JSON.stringify(operator)+" "+JSON.stringify(options));
 
-                    db.collection('cooks').update(query, operator, options, function(err, upserted) {
+                    db.collection('nurses').update(query, operator, options, function(err, upserted) {
                         if (err) {
                             throw err;
                             callback(err);
@@ -676,7 +676,7 @@ function add_to_mongo(docId, city, thumbnail, params, callback) {
             MongoClient.connect('mongodb://127.0.0.1:27017/babysitter', function(err, dbc) {
                 if(err) { throw err; callback(err); }
 
-                dbc.collection('cooks').find({_id: docId}).toArray(function(err, sitters) {
+                dbc.collection('nurses').find({_id: docId}).toArray(function(err, sitters) {
 
                     if(!err) {
 
@@ -703,7 +703,7 @@ function add_to_mongo(docId, city, thumbnail, params, callback) {
 
                         //console.log("elderly_care/insertOrUpdate "+JSON.stringify(query)+" "+JSON.stringify(operator)+" "+JSON.stringify(options));
 
-                        dbc.collection('cooks').update(query, operator, options, function(err, upserted) {
+                        dbc.collection('nurses').update(query, operator, options, function(err, upserted) {
                             if (err) {
                                 throw err;
                                 callback(err);
@@ -721,7 +721,7 @@ function add_to_mongo(docId, city, thumbnail, params, callback) {
         }
 
     } catch (e) {
-        console.error("cooks/insertOrUpdate Error: "+e);
+        console.error("nurses/insertOrUpdate Error: "+e);
         callback(e);
     }
 }
