@@ -44,6 +44,13 @@ app.get('/post_http', routes.post_http);
 app.get('/cron_setup', routes.cron_setup);
 
 app.get('/get_nearest_babysitters', babys.nearest_baby_sitters);
+app.get('/get_nearest_elderly_cares', babys.nearest_elderly_care);
+app.get('/get_nearest_nurses', babys.nearest_nurses);
+app.get('/get_nearest_maids', babys.nearest_maids);
+app.get('/get_nearest_cooks', babys.nearest_cooks);
+
+
+app.get('/import_data', babys.import_data);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
